@@ -1,0 +1,1 @@
+This repository contains the implementation of a fully functional e-commerce web application developed using JavaEE, JDBC connection pooling, and JSP. The project demonstrates the design and development of a dynamic web application with features for both administrators and customers.
