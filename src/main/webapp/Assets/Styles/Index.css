@@ -43,6 +43,11 @@ h5,
   color: #306ebf !important;
 }
 
+.navbar-brand .logo {
+  width: 50px;
+  height: 50px;
+}
+
 .hero-section {
   background: linear-gradient(45deg, var(--dark-blue), var(--dark-bg));
   min-height: 90vh;
@@ -64,6 +69,12 @@ h5,
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--primary-blue);
+  & .hover-image2 {
+    display: none;
+  }
+  & .hover-image {
+    display: block;
+  }
 }
 
 .btn-primary {
@@ -205,11 +216,8 @@ footer a:hover {
   color: var(--white);
   transform: scale(1.1);
 }
-.hover-image {
-  transition: all 0.3s ease-in-out;
-}
 
-.card:hover .hover-image {
-  content: attr(data-hover); /* For fallback browsers */
-  src: attr(data-hover);
+.hover-image {
+  position: relative;
+  display: none;
 }

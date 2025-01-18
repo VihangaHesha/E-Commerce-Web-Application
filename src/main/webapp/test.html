@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Thread Co. - Premium Jeans Collection</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #0656bf;
+        --secondary-blue: #043f8c;
+        --dark-blue: #032859;
+        --dark-bg: #121212;
+        --dark-card: #1e1e1e;
+        --white: #ffffff;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--white);
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand,
+      .btn {
+        font-family: "Anton", serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+
+      /* Navigation */
+      .navbar {
+        background-color: var(--dark-card) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-light .navbar-brand,
+      .navbar-light .navbar-nav .nav-link {
+        color: var(--white);
+      }
+
+      .nav-link:hover {
+        color: #306ebf !important;
+      }
+
+      /* Hero Section */
+      .denim-texture {
+        background: linear-gradient(45deg, var(--dark-blue), var(--dark-bg));
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Cards */
+      .card {
+        background-color: var(--dark-card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+      }
+
+      .featured-card {
+        transition: transform 0.3s ease;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--primary-blue);
+      }
+
+      /* Size System */
+      .size-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .size-badge {
+        background-color: var(--dark-card);
+        color: var(--white);
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--primary-blue);
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .size-badge:hover {
+        background-color: var(--primary-blue);
+        transform: scale(1.05);
+      }
+
+      .size-badge::before {
+        content: attr(data-waist);
+        display: block;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .size-badge::after {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.7rem;
+        opacity: 0.7;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
+      }
+
+      .btn-outline-primary {
+        color: var(--white);
+        border-color: var(--primary-blue);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      /* Product Info */
+      .fabric-info {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .fabric-info i {
+        color: var(--primary-blue);
+      }
+
+      .price-tag {
+        color: var(--primary-blue);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 1rem 0;
+      }
+
+      /* Cart and Profile */
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+      }
+
+      .profile-btn,
+      .cart-btn {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background-color: transparent;
+        border: 1px solid var(--primary-blue);
+      }
+
+      .profile-btn:hover,
+      .cart-btn:hover {
+        background-color: var(--primary-blue);
+        color: var(--white);
+      }
+      .denim-texture {
+        background-image: linear-gradient(
+            rgba(3, 40, 89, 0.9),
+            rgba(3, 40, 89, 0.9)
+          ),
+          url("/api/placeholder/1920/1080");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .size-badge {
+        background-color: var(--dark-card);
+        color: var(--white);
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin: 2px;
+        border: 1px solid var(--primary-blue);
+      }
+
+      .fabric-info {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .fit-icon {
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Blue Thread Co.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Collections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Size Guide</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn profile-btn">
+              <i class="fas fa-user me-2"></i>Profile
+            </button>
+            <button class="btn cart-btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section denim-texture">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="hero-title">Premium Jeans Collection</h1>
+            <p class="hero-subtitle">
+              Discover our handcrafted jeans made with Japanese selvedge denim
+            </p>
+            <button class="btn btn-primary btn-lg">Shop New Arrivals</button>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/api/placeholder/600/400"
+              alt="Premium Jeans"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-heading text-center">Shop By Fit</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="card-body">
+                <div class="fit-icon">
+                  <i class="fas fa-male"></i>
+                </div>
+                <h5 class="card-title">Slim Fit</h5>
+                <p class="card-text text-muted">
+                  Modern slim cut for a sleek look
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="fit-icon">
+                <i class="fas fa-arrows-alt-h"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Regular Fit</h5>
+                <p class="card-text text-muted">Classic comfortable fit</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="fit-icon">
+                <i class="fas fa-expand-arrows-alt"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Relaxed Fit</h5>
+                <p class="card-text text-muted">
+                  Loose fit for maximum comfort
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="fit-icon">
+                <i class="fas fa-compress-arrows-alt"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Skinny Fit</h5>
+                <p class="card-text text-muted">Ultra-slim modern cut</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-5 section-bg">
+      <div class="container">
+        <h2 class="section-heading text-center">Best Sellers</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="/api/placeholder/400/300"
+                class="card-img-top"
+                alt="Classic Blue Jeans"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Vintage Wash Slim Fit</h5>
+                <p class="fabric-info">14oz Japanese Selvedge Denim</p>
+                <div class="my-2">
+                  <span class="size-badge">30</span>
+                  <span class="size-badge">32</span>
+                  <span class="size-badge">34</span>
+                  <span class="size-badge">36</span>
+                </div>
+                <p class="price-tag">$149.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="/api/placeholder/400/300"
+                class="card-img-top"
+                alt="Dark Wash Jeans"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Raw Denim Regular Fit</h5>
+                <p class="fabric-info">16oz Heavyweight Denim</p>
+                <div class="my-2">
+                  <span class="size-badge">30</span>
+                  <span class="size-badge">32</span>
+                  <span class="size-badge">34</span>
+                  <span class="size-badge">36</span>
+                </div>
+                <p class="price-tag">$179.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="Assets/Images/Wireless Headphones.jpg"
+                class="card-img-top"
+                alt="Light Wash Jeans"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Light Wash Skinny</h5>
+                <p class="fabric-info">12oz Stretch Denim</p>
+                <div class="my-2">
+                  <span class="size-badge">30</span>
+                  <span class="size-badge">32</span>
+                  <span class="size-badge">34</span>
+                  <span class="size-badge">36</span>
+                </div>
+                <p class="price-tag">$129.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="text-center">
+              <i
+                class="fas fa-tape mb-3"
+                style="font-size: 2rem; color: var(--primary-blue)"
+              ></i>
+              <h4>Perfect Fit Guarantee</h4>
+              <p class="text-muted">Free alterations within 30 days</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <i
+                class="fas fa-shipping-fast mb-3"
+                style="font-size: 2rem; color: var(--primary-blue)"
+              ></i>
+              <h4>Free Shipping</h4>
+              <p class="text-muted">On orders over $100</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <i
+                class="fas fa-medal mb-3"
+                style="font-size: 2rem; color: var(--primary-blue)"
+              ></i>
+              <h4>Premium Quality</h4>
+              <p class="text-muted">Handcrafted premium denim</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 section-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h3>Join the Denim Club</h3>
+            <p class="text-muted">
+              Get 10% off your first order and exclusive access to new releases
+            </p>
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Blue Thread Co.</h5>
+            <p class="text-muted">Crafting premium denim since 1985</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Care Instructions</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p class="text-muted">
+              Email: support@denimhouse.com<br />Phone: (555) 123-4567
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let cartCount = 0;
+      const cartCountElement = document.querySelector(".cart-count");
+
+      document.querySelectorAll(".btn-outline-primary").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.innerHTML = "✓ Added";
+          this.classList.remove("btn-outline-primary");
+          this.classList.add("btn-success");
+
+          // Update cart count
+          cartCount++;
+          cartCountElement.textContent = cartCount;
+
+          setTimeout(() => {
+            this.innerHTML = "Add to Cart";
+            this.classList.remove("btn-success");
+            this.classList.add("btn-outline-primary");
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
