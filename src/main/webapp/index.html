@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEase - Your One-Stop Shop</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #0656bf;
+        --secondary-blue: #043f8c;
+        --dark-blue: #032859;
+        --dark-bg: #121212;
+        --dark-card: #1e1e1e;
+        --white: #ffffff;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand,
+      .btn {
+        font-family: "Anton", serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+
+      .navbar {
+        background-color: var(--dark-card) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-light .navbar-brand,
+      .navbar-light .navbar-nav .nav-link {
+        color: var(--white);
+      }
+
+      .navbar-light .navbar-toggler {
+        border-color: var(--white);
+        background-color: var(--white);
+      }
+
+      .nav-link:hover {
+        color: #306ebf !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(45deg, var(--dark-blue), var(--dark-bg));
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .card {
+        background-color: var(--dark-card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+      }
+
+      .featured-card {
+        transition: transform 0.3s ease;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--primary-blue);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
+      }
+
+      .btn-outline-primary {
+        color: var(--white);
+      }
+
+      .btn-outline-primary:hover {
+        border-color: var(--secondary-blue);
+        color: var(--white);
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+      }
+
+      .profile-btn,
+      .cart-btn {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background-color: transparent;
+        color: var(--white);
+      }
+
+      .profile-btn:hover,
+      .cart-btn:hover {
+        & i {
+          color: #306ebf;
+        }
+        border-color: var(--secondary-blue);
+        color: #306ebf !important ;
+      }
+
+      input.form-control {
+        background-color: var(--dark-card);
+        border: 1px solid var(--primary-blue);
+        color: var(--white);
+      }
+
+      input.form-control:focus {
+        background-color: var(--dark-card);
+        color: var(--white);
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 0.25rem rgba(6, 86, 191, 0.25);
+      }
+
+      input.form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .category-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-blue);
+      }
+
+      .text-muted {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+
+      footer {
+        background-color: var(--dark-card);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      footer a {
+        color: var(--white) !important;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--primary-blue) !important;
+      }
+
+      .price-tag {
+        color: var(--primary-blue);
+        font-size: 1.5rem;
+        font-family: "Anton", serif;
+      }
+
+      .section-heading {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        text-transform: uppercase;
+        color: var(--white);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-subtitle {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-bg {
+        background-color: var(--dark-card);
+        padding: 4rem 0;
+      }
+
+      /* Success state for add to cart button */
+      .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: var(--white);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ShopEase</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#categories">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn profile-btn text-light">
+              <i class="fas fa-user me-2"></i>Profile
+            </button>
+            <button class="btn cart-btn text-light">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">Discover Amazing Products</h1>
+            <p class="lead mb-4 text-secondary">
+              Shop the latest trends with incredible deals and exclusive offers.
+            </p>
+            <button class="btn btn-primary btn-lg">Shop Now</button>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/src/main/webapp/Assets/Images/E-Commerce Header bg Removed.png"
+              alt="Shopping"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-5" id="categories">
+      <br />
+      <div class="container">
+        <h2 class="text-center mb-5">Popular Categories</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="card-body">
+                <div class="category-icon">👕</div>
+                <h5 class="card-title">Fashion</h5>
+                <p class="card-text text-secondary">Discover latest trends</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="category-icon">📱</div>
+              <div class="card-body">
+                <h5 class="card-title">Electronics</h5>
+                <p class="card-text text-secondary">Latest gadgets</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="category-icon">🏠</div>
+              <div class="card-body">
+                <h5 class="card-title">Home & Living</h5>
+                <p class="card-text text-secondary">Decor & furniture</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card featured-card text-center h-100">
+              <div class="category-icon">🎮</div>
+              <div class="card-body">
+                <h5 class="card-title">Gaming</h5>
+                <p class="card-text text-secondary">Games & accessories</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Featured Products</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="Assets/Images/Wireless Headphones.jpg"
+                class="card-img-top"
+                alt="Product 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Wireless Headphones</h5>
+                <p class="card-text text-secondary">
+                  Premium sound quality with noise cancellation
+                </p>
+                <p class="text-primary fw-bold">$199.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="/api/placeholder/400/300"
+                class="card-img-top"
+                alt="Product 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Smart Watch</h5>
+                <p class="card-text text-secondary">
+                  Track your fitness and stay connected
+                </p>
+                <p class="text-primary fw-bold">$299.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card featured-card h-100">
+              <img
+                src="/api/placeholder/400/300"
+                class="card-img-top"
+                alt="Product 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Laptop Backpack</h5>
+                <p class="card-text text-secondary">
+                  Stylish and functional design
+                </p>
+                <p class="text-primary fw-bold">$79.99</p>
+                <button class="btn btn-outline-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p class="text-secondary">
+              Get updates about new products and special offers!
+            </p>
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>ShopEase</h5>
+            <p class="text-secondary">Your one-stop shop for all your needs.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-secondary">About Us</a></li>
+              <li><a href="#" class="text-secondary">Terms & Conditions</a></li>
+              <li><a href="#" class="text-secondary">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p class="text-secondary">
+              Email: info@shopease.com<br />Phone: (555) 123-4567
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Add to cart animation and counter
+      let cartCount = 0;
+      const cartCountElement = document.querySelector(".cart-count");
+
+      document.querySelectorAll(".btn-outline-primary").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.innerHTML = "✓ Added";
+          this.classList.remove("btn-outline-primary");
+          this.classList.add("btn-success");
+
+          // Update cart count
+          cartCount++;
+          cartCountElement.textContent = cartCount;
+
+          setTimeout(() => {
+            this.innerHTML = "Add to Cart";
+            this.classList.remove("btn-success");
+            this.classList.add("btn-outline-primary");
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
