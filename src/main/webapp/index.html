@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShopEase - Your One-Stop Shop</title>
+    <title>Blue Thread Co. - Premium Jeans Collection</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,210 +12,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --primary-blue: #0656bf;
-        --secondary-blue: #043f8c;
-        --dark-blue: #032859;
-        --dark-bg: #121212;
-        --dark-card: #1e1e1e;
-        --white: #ffffff;
-      }
-
-      body {
-        background-color: var(--dark-bg);
-        color: var(--white);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      .navbar-brand,
-      .btn {
-        font-family: "Anton", serif;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-      }
-
-      .navbar {
-        background-color: var(--dark-card) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .navbar-light .navbar-brand,
-      .navbar-light .navbar-nav .nav-link {
-        color: var(--white);
-      }
-
-      .navbar-light .navbar-toggler {
-        border-color: var(--white);
-        background-color: var(--white);
-      }
-
-      .nav-link:hover {
-        color: #306ebf !important;
-      }
-
-      .hero-section {
-        background: linear-gradient(45deg, var(--dark-blue), var(--dark-bg));
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .card {
-        background-color: var(--dark-card);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--white);
-      }
-
-      .featured-card {
-        transition: transform 0.3s ease;
-      }
-
-      .featured-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        border: 1px solid var(--primary-blue);
-      }
-
-      .btn-primary {
-        background-color: var(--primary-blue);
-        border-color: var(--primary-blue);
-        color: var(--white);
-      }
-
-      .btn-primary:hover {
-        background-color: var(--secondary-blue);
-        border-color: var(--secondary-blue);
-      }
-
-      .btn-outline-primary {
-        color: var(--white);
-      }
-
-      .btn-outline-primary:hover {
-        border-color: var(--secondary-blue);
-        color: var(--white);
-      }
-
-      .cart-count {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        background-color: var(--primary-blue);
-        color: var(--white);
-        border-radius: 50%;
-        padding: 2px 6px;
-        font-size: 0.7rem;
-      }
-
-      .profile-btn,
-      .cart-btn {
-        position: relative;
-        padding: 8px 16px;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        background-color: transparent;
-        color: var(--white);
-      }
-
-      .profile-btn:hover,
-      .cart-btn:hover {
-        & i {
-          color: #306ebf;
-        }
-        border-color: var(--secondary-blue);
-        color: #306ebf !important ;
-      }
-
-      input.form-control {
-        background-color: var(--dark-card);
-        border: 1px solid var(--primary-blue);
-        color: var(--white);
-      }
-
-      input.form-control:focus {
-        background-color: var(--dark-card);
-        color: var(--white);
-        border-color: var(--primary-blue);
-        box-shadow: 0 0 0 0.25rem rgba(6, 86, 191, 0.25);
-      }
-
-      input.form-control::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      .category-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--primary-blue);
-      }
-
-      .text-muted {
-        color: rgba(255, 255, 255, 0.7) !important;
-      }
-
-      footer {
-        background-color: var(--dark-card);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      footer a {
-        color: var(--white) !important;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      footer a:hover {
-        color: var(--primary-blue) !important;
-      }
-
-      .price-tag {
-        color: var(--primary-blue);
-        font-size: 1.5rem;
-        font-family: "Anton", serif;
-      }
-
-      .section-heading {
-        color: var(--primary-blue);
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-      }
-
-      .hero-title {
-        font-size: 4rem;
-        text-transform: uppercase;
-        color: var(--white);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .hero-subtitle {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
-
-      .section-bg {
-        background-color: var(--dark-card);
-        padding: 4rem 0;
-      }
-
-      /* Success state for add to cart button */
-      .btn-success {
-        background-color: #28a745;
-        border-color: #28a745;
-        color: var(--white);
-      }
-    </style>
+    <link rel="stylesheet" href="Assets/Styles/Index.css" />
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">ShopEase</a>
+        <a class="navbar-brand fw-bold" href="#">Blue Thread Co.</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -230,13 +33,16 @@
               <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#categories">Categories</a>
+              <a class="nav-link" href="#categories">Collections</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
+              <a class="nav-link" href="#featured-products">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
+              <a class="nav-link" href="#">Size Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacts">Contact Us</a>
             </li>
           </ul>
           <div class="d-flex align-items-center gap-3">
@@ -257,16 +63,18 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h1 class="display-4 fw-bold mb-4">Discover Amazing Products</h1>
+            <h1 class="display-4 fw-bold mb-4">Premium Denim Collection</h1>
             <p class="lead mb-4 text-secondary">
-              Shop the latest trends with incredible deals and exclusive offers.
+              Experience the artistry of our handcrafted jeans, meticulously
+              woven from premium Japanese selvedge denim, where tradition meets
+              timeless style.
             </p>
             <button class="btn btn-primary btn-lg">Shop Now</button>
           </div>
           <div class="col-lg-6">
             <img
-              src="/src/main/webapp/Assets/Images/E-Commerce Header bg Removed.png"
-              alt="Shopping"
+              src="Assets/Images/Denim Poster.png"
+              alt="Premium Jeans"
               class="img-fluid rounded"
             />
           </div>
@@ -278,42 +86,48 @@
     <section class="py-5" id="categories">
       <br />
       <div class="container">
-        <h2 class="text-center mb-5">Popular Categories</h2>
+        <h2 class="text-center mb-5">Shop By Fit</h2>
         <div class="row g-4">
           <div class="col-md-3">
             <div class="card featured-card text-center h-100">
               <div class="card-body">
-                <div class="category-icon">👕</div>
-                <h5 class="card-title">Fashion</h5>
-                <p class="card-text text-secondary">Discover latest trends</p>
+                <div class="category-icon">
+                  <i class="fas fa-male"></i>
+                </div>
+                <h5 class="card-title">Slim Fit</h5>
+                <p class="card-text text-secondary">
+                  Modern slim cut for a sleek look
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-3">
             <div class="card featured-card text-center h-100">
-              <div class="category-icon">📱</div>
-              <div class="card-body">
-                <h5 class="card-title">Electronics</h5>
-                <p class="card-text text-secondary">Latest gadgets</p>
+              <div class="category-icon">
+                <i class="fas fa-arrows-alt-h"></i>
               </div>
+              <h5 class="card-title">Regular Fit</h5>
+              <p class="card-text text-secondary">Classic comfortable fit</p>
             </div>
           </div>
           <div class="col-md-3">
             <div class="card featured-card text-center h-100">
-              <div class="category-icon">🏠</div>
-              <div class="card-body">
-                <h5 class="card-title">Home & Living</h5>
-                <p class="card-text text-secondary">Decor & furniture</p>
+              <div class="category-icon">
+                <i class="fas fa-expand-arrows-alt"></i>
               </div>
+              <h5 class="card-title">Relaxed Fit</h5>
+              <p class="card-text text-secondary">
+                Loose fit for maximum comfort
+              </p>
             </div>
           </div>
           <div class="col-md-3">
             <div class="card featured-card text-center h-100">
-              <div class="category-icon">🎮</div>
-              <div class="card-body">
-                <h5 class="card-title">Gaming</h5>
-                <p class="card-text text-secondary">Games & accessories</p>
+              <div class="category-icon">
+                <i class="fas fa-compress-arrows-alt"></i>
               </div>
+              <h5 class="card-title">Skinny Fit</h5>
+              <p class="card-text text-secondary">Ultra-slim modern cut</p>
             </div>
           </div>
         </div>
@@ -321,23 +135,75 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="py-5">
+    <section class="py-5" id="featured-products">
+      <br />
+      <br />
       <div class="container">
-        <h2 class="text-center mb-5">Featured Products</h2>
+        <h2 class="text-center mb-5">Best Sellers</h2>
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card featured-card h-100">
               <img
-                src="Assets/Images/Wireless Headphones.jpg"
+                src="Assets/Products/Dark Wash Jean.jpg"
                 class="card-img-top"
-                alt="Product 1"
+                alt="Dark Wash Jeans"
               />
               <div class="card-body">
-                <h5 class="card-title">Wireless Headphones</h5>
-                <p class="card-text text-secondary">
-                  Premium sound quality with noise cancellation
-                </p>
-                <p class="text-primary fw-bold">$199.99</p>
+                <h5 class="card-title">Raw Denim Regular Fit</h5>
+                <p class="card-text text-secondary">16oz Heavyweight Denim</p>
+                <p class="text-primary fw-bold">$179.99</p>
+                <div class="size-options mb-3">
+                  <label class="form-label d-block">Select Size:</label>
+                  <div class="btn-group" role="group" aria-label="Size options">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size28"
+                      autocomplete="off"
+                      value="28"
+                    />
+                    <label class="btn btn-outline-primary" for="size28"
+                      >28</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size30"
+                      autocomplete="off"
+                      value="30"
+                    />
+                    <label class="btn btn-outline-primary" for="size30"
+                      >30</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="32"
+                      autocomplete="off"
+                      value="32"
+                    />
+                    <label class="btn btn-outline-primary" for="size32"
+                      >32</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size34"
+                      autocomplete="off"
+                      value="34"
+                    />
+                    <label class="btn btn-outline-primary" for="size34"
+                      >34</label
+                    >
+                  </div>
+                </div>
                 <button class="btn btn-outline-primary">Add to Cart</button>
               </div>
             </div>
@@ -345,33 +211,136 @@
           <div class="col-md-4">
             <div class="card featured-card h-100">
               <img
-                src="/api/placeholder/400/300"
+                src="Assets/Products/Classic Blue Jean 3.jpg"
                 class="card-img-top"
-                alt="Product 2"
+                alt="Classic Blue Jeans"
               />
               <div class="card-body">
-                <h5 class="card-title">Smart Watch</h5>
+                <h5 class="card-title">Vintage Wash Slim Fit</h5>
                 <p class="card-text text-secondary">
-                  Track your fitness and stay connected
+                  14oz Japanese Selvedge Denim
                 </p>
-                <p class="text-primary fw-bold">$299.99</p>
+                <p class="text-primary fw-bold">$149.99</p>
+                <div class="size-options mb-3">
+                  <label class="form-label d-block">Select Size:</label>
+                  <div class="btn-group" role="group" aria-label="Size options">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size28"
+                      autocomplete="off"
+                      value="28"
+                    />
+                    <label class="btn btn-outline-primary" for="size28"
+                      >28</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size30"
+                      autocomplete="off"
+                      value="30"
+                    />
+                    <label class="btn btn-outline-primary" for="size30"
+                      >30</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="32"
+                      autocomplete="off"
+                      value="32"
+                    />
+                    <label class="btn btn-outline-primary" for="size32"
+                      >32</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size34"
+                      autocomplete="off"
+                      value="34"
+                    />
+                    <label class="btn btn-outline-primary" for="size34"
+                      >34</label
+                    >
+                  </div>
+                </div>
                 <button class="btn btn-outline-primary">Add to Cart</button>
               </div>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card featured-card h-100">
               <img
-                src="/api/placeholder/400/300"
-                class="card-img-top"
-                alt="Product 3"
+                src="Assets/Products/Light Wash Image.jpg"
+                class="card-img-top hover-image"
+                alt="Light Wash Jeans"
               />
               <div class="card-body">
-                <h5 class="card-title">Laptop Backpack</h5>
-                <p class="card-text text-secondary">
-                  Stylish and functional design
-                </p>
-                <p class="text-primary fw-bold">$79.99</p>
+                <h5 class="card-title">Light Wash Skinny</h5>
+                <p class="card-text text-secondary">12oz Stretch Denim</p>
+                <p class="text-primary fw-bold">$129.99</p>
+                <div class="size-options mb-3">
+                  <label class="form-label d-block">Select Size:</label>
+                  <div class="btn-group" role="group" aria-label="Size options">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size28"
+                      autocomplete="off"
+                      value="28"
+                    />
+                    <label class="btn btn-outline-primary" for="size28"
+                      >28</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size30"
+                      autocomplete="off"
+                      value="30"
+                    />
+                    <label class="btn btn-outline-primary" for="size30"
+                      >30</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="32"
+                      autocomplete="off"
+                      value="32"
+                    />
+                    <label class="btn btn-outline-primary" for="size32"
+                      >32</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sizeOptions1"
+                      id="size34"
+                      autocomplete="off"
+                      value="34"
+                    />
+                    <label class="btn btn-outline-primary" for="size34"
+                      >34</label
+                    >
+                  </div>
+                </div>
                 <button class="btn btn-outline-primary">Add to Cart</button>
               </div>
             </div>
@@ -381,13 +350,13 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-5">
+    <section class="py-5" id="contacts">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-            <h3>Subscribe to Our Newsletter</h3>
+            <h3>Join the Denim Club</h3>
             <p class="text-secondary">
-              Get updates about new products and special offers!
+              Get 10% off your first order and exclusive access to new releases
             </p>
             <div class="input-group mb-3">
               <input
@@ -407,30 +376,28 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h5>ShopEase</h5>
-            <p class="text-secondary">Your one-stop shop for all your needs.</p>
+            <h5>Blue Thread Co.</h5>
+            <p class="text-secondary">Crafting premium denim since 1985</p>
           </div>
           <div class="col-md-4">
             <h5>Quick Links</h5>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-secondary">About Us</a></li>
-              <li><a href="#" class="text-secondary">Terms & Conditions</a></li>
+              <li><a href="#" class="text-secondary">Size Guide</a></li>
+              <li><a href="#" class="text-secondary">Care Instructions</a></li>
               <li><a href="#" class="text-secondary">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <h5>Contact Us</h5>
             <p class="text-secondary">
-              Email: info@shopease.com<br />Phone: (555) 123-4567
+              Email: support@bluethreadco.com<br />Phone: (+94) 76 555 0478
             </p>
           </div>
         </div>
       </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Add to cart animation and counter
       let cartCount = 0;
       const cartCountElement = document.querySelector(".cart-count");
 
