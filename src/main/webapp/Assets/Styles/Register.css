@@ -1,0 +1,85 @@
+.login-container {
+    background: #f8f9fa;
+    min-height: 100vh;
+    background-image:
+            radial-gradient(#19388c20 2px, transparent 2px),
+            radial-gradient(#19388c20 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.login-box {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 2px solid #19388c;
+}
+
+.brand-logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 2rem;
+}
+
+.brand-name {
+    color: #19388c;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 2px solid #dee2e6;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #19388c;
+    box-shadow: none;
+}
+
+.btn-vintage {
+    background-color: #19388c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-vintage:hover {
+    background-color: #112961;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.vintage-link {
+    color: #19388c;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.vintage-link:hover {
+    color: #112961;
+    text-decoration: underline;
+}
+
+.password-requirements {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+.password-requirements ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
