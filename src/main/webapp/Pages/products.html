@@ -3,7 +3,499 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blue Thread Co. - Products</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #0656bf;
+        --secondary-blue: #043f8c;
+        --dark-blue: #032859;
+        --dark-bg: #121212;
+        --dark-card: #1e1e1e;
+        --white: #ffffff;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--white);
+      }
+
+      .navbar {
+        background-color: var(--dark-card) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-light .navbar-brand,
+      .navbar-light .navbar-nav .nav-link {
+        color: var(--white);
+      }
+
+      .navbar-light .navbar-toggler {
+        border-color: var(--white);
+        background-color: var(--white);
+      }
+
+      .nav-link:hover {
+        color: #306ebf !important;
+      }
+
+      .card {
+        background-color: var(--dark-card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        transition: transform 0.3s ease;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--primary-blue);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .btn-outline-primary {
+        color: var(--white);
+        border-color: var(--primary-blue);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .filter-section {
+        background-color: var(--dark-card);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .filter-select {
+        background-color: var(--dark-bg);
+        color: var(--white);
+        border: 1px solid var(--primary-blue);
+      }
+
+      .filter-select option {
+        background-color: var(--dark-bg);
+        color: var(--white);
+      }
+
+      .price-tag {
+        color: var(--primary-blue);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+      }
+
+      .profile-btn,
+      .cart-btn {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background-color: transparent;
+        color: var(--white);
+      }
+
+      .size-btn {
+        padding: 5px 15px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .size-btn:hover {
+        transform: scale(1.1);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
+      <div class="container">
+        <img src="/api/placeholder/50/50" alt="Blue Thread Co." width="50" />
+        <a class="navbar-brand fw-bold" href="#">Blue Thread Co.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Size Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn profile-btn">
+              <i class="fas fa-user me-2"></i>Profile
+            </button>
+            <button class="btn cart-btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="py-5 text-center" style="background-color: var(--dark-card)">
+      <h1 class="display-4">Our Collection</h1>
+      <p class="lead text-secondary">Discover our premium denim selection</p>
+    </div>
+
+    <!-- Category Section -->
+    <div class="container py-5">
+      <h2 class="text-center mb-5">Shop By Category</h2>
+      <div class="row g-4 mb-5">
+        <div class="col-md-3">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-male"></i>
+            </div>
+            <h5>Slim Fit</h5>
+            <p class="text-secondary mb-0">Modern slim cut for a sleek look</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-arrows-alt-h"></i>
+            </div>
+            <h5>Regular Fit</h5>
+            <p class="text-secondary mb-0">Classic comfortable fit</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+            <h5>Relaxed Fit</h5>
+            <p class="text-secondary mb-0">Loose fit for maximum comfort</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-compress-arrows-alt"></i>
+            </div>
+            <h5>Skinny Fit</h5>
+            <p class="text-secondary mb-0">Ultra-slim modern cut</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Categories -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h5>Raw Denim</h5>
+            <p class="text-secondary mb-0">Unwashed, pure indigo denim</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h5>Premium Selvedge</h5>
+            <p class="text-secondary mb-0">Traditional shuttle-loomed denim</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 rounded">
+            <div class="category-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h5>Sustainable Collection</h5>
+            <p class="text-secondary mb-0">Eco-friendly materials</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="container py-5">
+      <!-- Filters -->
+      <div class="filter-section">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Filter by Fit</label>
+            <select class="form-select filter-select">
+              <option value="">All Fits</option>
+              <option value="regular">Regular Fit</option>
+              <option value="slim">Slim Fit</option>
+              <option value="skinny">Skinny Fit</option>
+              <option value="relaxed">Relaxed Fit</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Filter by Price</label>
+            <select class="form-select filter-select">
+              <option value="">All Prices</option>
+              <option value="under-100">Under $100</option>
+              <option value="100-150">$100 - $150</option>
+              <option value="over-150">Over $150</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Filter by Wash</label>
+            <select class="form-select filter-select">
+              <option value="">All Washes</option>
+              <option value="dark">Dark Wash</option>
+              <option value="medium">Medium Wash</option>
+              <option value="light">Light Wash</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="row g-4">
+        <!-- Product Card 1 -->
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Dark Wash Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Raw Denim Regular Fit</h5>
+              <p class="card-text text-secondary">16oz Heavyweight Denim</p>
+              <p class="price-tag mb-3">$179.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Medium Wash Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Vintage Wash Slim Fit</h5>
+              <p class="card-text text-secondary">
+                14oz Japanese Selvedge Denim
+              </p>
+              <p class="price-tag mb-3">$149.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Light Wash Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Light Wash Skinny</h5>
+              <p class="card-text text-secondary">12oz Stretch Denim</p>
+              <p class="price-tag mb-3">$129.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Product Cards -->
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Selvedge Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Selvedge Straight Fit</h5>
+              <p class="card-text text-secondary">15oz Raw Selvedge Denim</p>
+              <p class="price-tag mb-3">$189.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Relaxed Fit Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Comfort Stretch Relaxed</h5>
+              <p class="card-text text-secondary">13oz Comfort Denim</p>
+              <p class="price-tag mb-3">$139.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Premium Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Premium Dark Wash</h5>
+              <p class="card-text text-secondary">14oz Premium Denim</p>
+              <p class="price-tag mb-3">$159.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn">28</button>
+                  <button class="btn btn-outline-primary size-btn">30</button>
+                  <button class="btn btn-outline-primary size-btn">32</button>
+                  <button class="btn btn-outline-primary size-btn">34</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Blue Thread Co.</h5>
+            <p class="text-secondary">Crafting premium denim since 1985</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-secondary">Size Guide</a></li>
+              <li><a href="#" class="text-secondary">Care Instructions</a></li>
+              <li><a href="#" class="text-secondary">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p class="text-secondary">
+              Email: support@bluethreadco.com<br />Phone: (+94) 76 555 0478
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let cartCount = 0;
+      const cartCountElement = document.querySelector(".cart-count");
+
+      document.querySelectorAll(".btn-outline-primary").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.innerHTML = "✓ Added";
+          this.classList.remove("btn-outline-primary");
+          this.classList.add("btn-success");
+
+          // Update cart count
+          cartCount++;
+          cartCountElement.textContent = cartCount;
+
+          setTimeout(() => {
+            this.innerHTML = "Add to Cart";
+            this.classList.remove("btn-success");
+            this.classList.add("btn-outline-primary");
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
 </html>

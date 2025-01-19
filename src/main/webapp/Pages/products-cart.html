@@ -1,9 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Previous head content remains same -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blue Thread Co. - Products</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Previous styles remain */
+      :root {
+        --primary-blue: #0656bf;
+        --secondary-blue: #043f8c;
+        --dark-blue: #032859;
+        --dark-bg: #121212;
+        --dark-card: #1e1e1e;
+        --white: #ffffff;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--white);
+      }
+
+      .category-card {
+        background-color: var(--dark-card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .category-card.active {
+        border: 2px solid var(--primary-blue);
+        transform: translateY(-10px);
+        box-shadow: 0 5px 15px rgba(6, 86, 191, 0.3);
+      }
+
+      .category-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-blue);
+      }
+
+      .category-icon {
+        font-size: 2.5rem;
+        color: var(--primary-blue);
+        margin-bottom: 1rem;
+      }
+
+      .product-card {
+        display: none;
+      }
+
+      .product-card.show {
+        display: block;
+      }
+
+      .card {
+        background-color: var(--dark-card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        transition: transform 0.3s ease;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--primary-blue);
+      }
+
+      .price-tag {
+        color: var(--primary-blue);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .no-results {
+        display: none;
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--dark-card);
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- Category Section -->
+    <div class="container py-5">
+      <h2 class="text-center mb-5">Select Category</h2>
+      <div class="row g-4 mb-5">
+        <!-- Category Cards -->
+        <div class="col-md-3">
+          <div
+            class="category-card text-center p-4 rounded"
+            data-category="slim"
+          >
+            <div class="category-icon">
+              <i class="fas fa-male"></i>
+            </div>
+            <h5>Slim Fit</h5>
+            <p class="text-secondary mb-0">Modern slim cut for a sleek look</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="category-card text-center p-4 rounded"
+            data-category="regular"
+          >
+            <div class="category-icon">
+              <i class="fas fa-arrows-alt-h"></i>
+            </div>
+            <h5>Regular Fit</h5>
+            <p class="text-secondary mb-0">Classic comfortable fit</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="category-card text-center p-4 rounded"
+            data-category="relaxed"
+          >
+            <div class="category-icon">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+            <h5>Relaxed Fit</h5>
+            <p class="text-secondary mb-0">Loose fit for maximum comfort</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="category-card text-center p-4 rounded"
+            data-category="skinny"
+          >
+            <div class="category-icon">
+              <i class="fas fa-compress-arrows-alt"></i>
+            </div>
+            <h5>Skinny Fit</h5>
+            <p class="text-secondary mb-0">Ultra-slim modern cut</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="row g-4" id="productGrid">
+        <!-- Slim Fit Products -->
+        <div class="col-md-4 product-card" data-category="slim">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Slim Fit Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Premium Slim Fit</h5>
+              <p class="card-text text-secondary">14oz Japanese Denim</p>
+              <p class="price-tag mb-3">$159.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    28
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    30
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    32
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    34
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular Fit Products -->
+        <div class="col-md-4 product-card" data-category="regular">
+          <div class="card featured-card h-100">
+            <img
+              src="/api/placeholder/400/300"
+              class="card-img-top"
+              alt="Regular Fit Jeans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Classic Regular Fit</h5>
+              <p class="card-text text-secondary">16oz Heavyweight Denim</p>
+              <p class="price-tag mb-3">$149.99</p>
+              <div class="size-options mb-3">
+                <label class="form-label">Select Size:</label>
+                <div class="d-flex justify-content-start">
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    28
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    30
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    32
+                  </button>
+                  <button class="btn btn-outline-primary size-btn mx-1">
+                    34
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more products for each category -->
+        <!-- No Results Message -->
+        <div class="no-results col-12">
+          <h3>No products found in this category</h3>
+          <p class="text-secondary">
+            Please try selecting a different category
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Category Selection Logic
+      const categoryCards = document.querySelectorAll(".category-card");
+      const productCards = document.querySelectorAll(".product-card");
+      const noResults = document.querySelector(".no-results");
+
+      categoryCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Remove active class from all cards
+          categoryCards.forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked card
+          card.classList.add("active");
+
+          const selectedCategory = card.getAttribute("data-category");
+          filterProducts(selectedCategory);
+        });
+      });
+
+      function filterProducts(category) {
+        let hasProducts = false;
+
+        productCards.forEach((product) => {
+          if (product.getAttribute("data-category") === category) {
+            product.classList.add("show");
+            hasProducts = true;
+          } else {
+            product.classList.remove("show");
+          }
+        });
+
+        // Show/hide no results message
+        noResults.style.display = hasProducts ? "none" : "block";
+      }
+
+      // Cart functionality
+      let cartCount = 0;
+      const cartCountElement = document.querySelector(".cart-count");
+
+      document.querySelectorAll(".btn-outline-primary").forEach((button) => {
+        if (button.textContent === "Add to Cart") {
+          button.addEventListener("click", function () {
+            cartCount++;
+            cartCountElement.textContent = cartCount;
+
+            this.innerHTML = "✓ Added";
+            this.classList.add("btn-success");
+            this.classList.remove("btn-outline-primary");
+
+            setTimeout(() => {
+              this.innerHTML = "Add to Cart";
+              this.classList.remove("btn-success");
+              this.classList.add("btn-outline-primary");
+            }, 2000);
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
