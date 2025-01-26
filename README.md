@@ -7,9 +7,7 @@ A halfly-featured e-commerce web application developed using JavaEE, JDBC connec
 
 ### Administrator Features
 - Product Management
-  - Add, view, update, and delete products
-- Category Management
-  - Manage product categories
+  - Add, view products
 - Order Management
   - View all customer orders
 - User Management
@@ -19,12 +17,7 @@ A halfly-featured e-commerce web application developed using JavaEE, JDBC connec
 - User Authentication
   - Registration, login, and logout
 - Product Browsing
-  - View products by category
-  - Search and sort products
-- Shopping Cart
-  - Add, update, and remove products
-- Order Placement
-  - Place and view order history
+  - View products
 - Profile Management
   - Update personal information
 
@@ -38,7 +31,7 @@ A halfly-featured e-commerce web application developed using JavaEE, JDBC connec
 - Java Development Kit (JDK)
 - Apache Tomcat
 - MySQL Database
-- Maven/Gradle (for dependency management)
+- Maven (for dependency management)
 
 ## Database Setup
 1. Create MySQL database named `ecommerce`
