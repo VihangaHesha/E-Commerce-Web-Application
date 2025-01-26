@@ -1,7 +1,7 @@
 # JavaEE E-Commerce Web Application
 
 ## Project Overview
-A halfly-featured e-commerce web application developed using JavaEE, JDBC connection pooling, and JSP, providing comprehensive functionality for both administrators and customers.
+A halfly-featured e-commerce web application developed using JavaEE, JDBC connection pooling, and JSP, providing comprehensive functionality for both administrators and customers.Please change branch into main.The project isn't done 100% as required but have done back end logic handling and front-end work.
 
 ## Features
 
