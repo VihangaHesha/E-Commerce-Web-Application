@@ -53,7 +53,7 @@ A halfly-featured e-commerce web application developed using JavaEE, JDBC connec
 ## Installation
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ecommerce-webapp.git
+https://github.com/VihangaHesha/E-Commerce-Web-Application.git
 ```
 
 2. Configure database connection in `database.properties`
