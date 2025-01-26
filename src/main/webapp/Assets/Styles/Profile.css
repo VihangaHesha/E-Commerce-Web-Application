@@ -1,0 +1,173 @@
+:root {
+    --primary-blue: #0656bf;
+    --secondary-blue: #043f8c;
+    --dark-blue: #032859;
+    --dark-bg: #0f1117;
+    --dark-card: #1a1d25;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-600: #6c757d;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+/* Enhanced Navigation Tabs */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+
+.nav-tabs .nav-link {
+    color: var(--gray-100);
+    border: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease;
+    border-radius: 8px 8px 0 0;
+    opacity: 0.7;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    opacity: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: var(--dark-card);
+    opacity: 0.9;
+}
+
+/* Enhanced Cards */
+.card {
+    background-color: var(--dark-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Enhanced Profile Image */
+.profile-image {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(
+            135deg,
+            var(--primary-blue),
+            var(--secondary-blue)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(6, 86, 191, 0.3);
+}
+
+/* Enhanced Form Elements */
+.form-control,
+.form-select {
+    color: var(--white);
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--dark-bg);
+    border-color: var(--primary-blue);
+    color: var(--white);
+    box-shadow: 0 0 0 3px rgba(6, 86, 191, 0.15);
+}
+
+/* Enhanced Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(
+            135deg,
+            var(--primary-blue),
+            var(--secondary-blue)
+    );
+    border: none;
+    box-shadow: 0 4px 6px rgba(6, 86, 191, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(
+            135deg,
+            var(--secondary-blue),
+            var(--dark-blue)
+    );
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(6, 86, 191, 0.3);
+}
+
+/* Enhanced Tables */
+.table {
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+.table th {
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Enhanced Cart Item */
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Order Status */
+.order-status {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-delivered {
+    background-color: rgba(25, 135, 84, 0.15);
+    color: #28a745;
+    border: 1px solid rgba(25, 135, 84, 0.2);
+}
+
+/* Enhanced Cart Summary */
+.cart-summary {
+    position: sticky;
+    top: 2rem;
+}
+
+/* Smooth Transitions */
+.tab-content > .tab-pane {
+    transition: all 0.3s ease-in-out;
+}

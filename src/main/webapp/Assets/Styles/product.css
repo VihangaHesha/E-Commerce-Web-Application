@@ -1,0 +1,221 @@
+:root {
+    --primary-blue: #0656bf;
+    --secondary-blue: #043f8c;
+    --dark-blue: #032859;
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --white: #ffffff;
+
+}
+
+* {
+    font-family: "Anton", serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: var(--dark-card) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: var(--white) !important;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #306ebf !important;
+}
+.navbar-brand,
+.btn {
+    font-family: "Anton", serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.navbar {
+    background-color: var(--dark-card) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.navbar-light .navbar-toggler {
+    border-color: var(--white);
+    background-color: var(--white);
+}
+
+.nav-link:hover {
+    color: #306ebf !important;
+}
+
+.navbar-brand .logo {
+    width: 50px;
+    height: 50px;
+}
+
+.hero-section {
+    background-color: var(--dark-blue);
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-section img {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.search-input {
+    background-color: var(--dark-card);
+    border: 1px solid var(--primary-blue);
+    color: var(--white);
+    border-radius: 25px;
+    padding: 15px 25px;
+}
+
+.search-input:focus {
+    background-color: var(--dark-card);
+    color: var(--white);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.25rem rgba(6, 86, 191, 0.25);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.category-sidebar {
+    background-color: var(--dark-card);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-sidebar .btn {
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.category-sidebar .btn:hover,
+.category-sidebar .btn:focus {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.category-sidebar .btn-dark {
+    background-color: var(--primary-blue) !important;
+}
+
+.product-card {
+    background-color: var(--dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-blue);
+}
+
+.product-image {
+    background-color: var(--dark-card);
+}
+
+.rating {
+    color: var(--primary-blue);
+}
+
+.rating i {
+    color: #ffc107;
+}
+
+.btn-outline-dark {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-dark {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.newsletter-section {
+    background-color: var(--dark-card);
+    color: var(--white);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-input {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--primary-blue);
+    color: var(--white);
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pagination .page-link {
+    background-color: var(--dark-card);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+footer {
+    background-color: var(--dark-card);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer a {
+    color: var(--white) !important;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-blue) !important;
+}
