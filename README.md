@@ -56,8 +56,3 @@ https://github.com/VihangaHesha/E-Commerce-Web-Application.git
 ## Running the Application
 1. Start Tomcat server
 2. Access application at `http://localhost:8080/ecommerce`
-
-## Bonus Features
-- Advanced product search
-- User role management
-- AJAX-powered interactions
